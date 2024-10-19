@@ -16,4 +16,4 @@ class Chatbot:
       self.messages.append({"role": "user", "content": user_message})
       ai_message = llm_groq.invoke(self.messages)
       self.messages.append({"role": "assistant", "content": ai_message.content})
-      return ai_message.content + "\n" + "Tokens used: " + str(ai_message.response_metadata["token_usage"]["total_tokens"])
+      return "My name:"+ ai_message.content + "\n" + "Tokens used: " + str(ai_message.response_metadata["token_usage"]["total_tokens"])
